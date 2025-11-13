@@ -1,111 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ritik | Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f8f9fa;
-            color: #333;
-        }
-        header {
-            background: #111;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-        h2 {
-            border-left: 5px solid #111;
-            padding-left: 10px;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        .btn {
-            background: #111;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[YOUR NAME] — Portfolio</title>
+  <meta name="description" content="Editorial-style portfolio inspired by HASU Resume Template" />
+  <!-- Tailwind CDN (Playground) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --beige:#e9e1d6;
+      --olive:#8b9360;
+      --offwhite:#f8f6f2;
+      --black:#0b0b0b;
+    }
+    .heading-serif{font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    html{scroll-behavior:smooth}
+    /* small editorial touches */
+    .magazine-accent{border-left:6px solid var(--olive);} 
+    .hero-name{letter-spacing: -0.02em}
+    .badge-registered{font-size:0.6rem; vertical-align:super; margin-left:0.2rem}
+    .prog-num{font-weight:700}
+  </style>
 </head>
-<body>
+<body class="bg-[color:var(--beige)] text-[color:var(--black)] leading-relaxed">
+  <!-- Container -->
+  <div class="max-w-6xl mx-auto p-6">
+    <!-- Navigation (small, top-right) -->
+    <nav class="flex justify-end gap-4 text-sm mb-6">
+      <a href="#hero" class="uppercase">01</a>
+      <a href="#about" class="uppercase">02</a>
+      <a href="#experience" class="uppercase">03</a>
+      <a href="#education" class="uppercase">04</a>
+      <a href="#skills" class="uppercase">05</a>
+      <a href="#volunteer" class="uppercase">06</a>
+      <a href="#hobbies" class="uppercase">07</a>
+      <a href="#contact" class="uppercase">Contact</a>
+    </nav>
 
-<header>
-    <h1>Ritik's Portfolio</h1>
-    <p>Web Developer • WordPress Expert • Designer</p>
-</header>
+    <!-- 1. HERO / COVER -->
+    <header id="hero" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center bg-[color:var(--offwhite)] p-8 rounded-lg shadow-lg">
+      <div class="pr-6">
+        <h1 class="text-6xl md:text-8xl font-extrabold heading-serif hero-name">[YOUR NAME]<span class="badge-registered">®</span></h1>
+        <p class="mt-4 text-lg text-gray-700">Portfolio — Creative Professional</p>
+        <div class="mt-6 flex gap-4 items-center">
+          <a href="/resume.pdf" class="inline-block bg-black text-white py-2 px-4 text-sm rounded-md shadow hover:translate-y-[-2px] transition">Download Résumé (PDF)</a>
+          <a href="#about" class="text-sm underline">View contents</a>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <!-- portrait: use a classy lifestyle placeholder -->
+        <img src="/mnt/data/download.jpg" alt="Portrait" class="w-72 md:w-96 rounded-lg object-cover shadow-md border-4 border-[color:var(--offwhite)]"/>
+      </div>
+    </header>
 
-<section>
-    <h2>About Me</h2>
-    <p>Hello! I’m <b>Ritik</b>, a web designer and WordPress developer. I create modern, mobile-friendly websites for businesses, travel companies, hotels, and startups. I love clean UI and fast websites.</p>
-</section>
+    <!-- 2. CONTENTS LIST -->
+    <section class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="md:col-span-2 bg-white p-6 rounded-lg shadow magazine-accent">
+        <img src="/mnt/data/download.jpg" alt="small hero" class="w-full h-44 object-cover rounded-md mb-4"/>
+        <h2 class="text-2xl font-bold">Contents List</h2>
+        <p class="text-sm text-gray-600 mt-2">A quick guide to this editorial portfolio — jump to any section.</p>
+      </div>
+      <aside class="bg-[color:var(--offwhite)] p-6 rounded-lg shadow">
+        <ol class="list-decimal list-inside space-y-4 text-sm font-semibold">
+          <li><a href="#about" class="hover:underline">01 About Me</a></li>
+          <li><a href="#experience" class="hover:underline">02 Experience</a></li>
+          <li><a href="#education" class="hover:underline">03 Education</a></li>
+          <li><a href="#skills" class="hover:underline">04 Skills</a></li>
+          <li><a href="#volunteer" class="hover:underline">05 Volunteer Work</a></li>
+          <li><a href="#hobbies" class="hover:underline">06 Hobbies</a></li>
+          <li><a href="#contact" class="hover:underline">07 Get in Touch</a></li>
+        </ol>
+      </aside>
+    </section>
 
-<section>
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>WordPress Development</li>
-        <li>React (Basics)</li>
-        <li>SEO Optimization</li>
-        <li>UI/UX Design</li>
-    </ul>
-</section>
+    <!-- 3. ABOUT ME -->
+    <section id="about" class="mt-10 bg-white p-8 rounded-lg shadow grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-4xl font-extrabold">ABOUT ME</h3>
+        <p class="mt-4 text-gray-700">हैलो — मैं एक क्रिएटिव प्रोफेशनल हूँ। I blend editorial storytelling with commercial design. My work focuses on photography, branding, and visual narratives that feel warm and honest. I take pride in simple solutions with strong aesthetics.</p>
+      </div>
+      <div class="flex justify-end">
+        <img src="/mnt/data/download.jpg" alt="Lifestyle" class="w-full md:w-96 rounded-md object-cover shadow" />
+      </div>
+    </section>
 
-<section>
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="card">
-            <h3>Maa Vaishno Tour & Travels</h3>
-            <p>Taxi service website built using WordPress with booking system.</p>
+    <!-- 4. EXPERIENCE (Timeline) -->
+    <section id="experience" class="mt-10">
+      <h3 class="text-4xl font-extrabold mb-6">EXPERIENCE</h3>
+      <div class="space-y-8">
+        <!-- Job 1 -->
+        <div class="bg-[color:var(--offwhite)] p-6 rounded-lg grid md:grid-cols-3 gap-4 items-center">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 bg-white rounded-md flex items-center justify-center shadow">Logo</div>
+            <div>
+              <h4 class="font-bold">Senior Designer — Studio Name</h4>
+              <p class="text-sm text-gray-600">2023 — 2024</p>
+            </div>
+          </div>
+          <div class="md:col-span-2 text-sm text-gray-700">
+            <ul class="list-disc ml-5 space-y-2">
+              <li>Led a rebrand project that increased client engagement by 40%.</li>
+              <li>Produced editorial photography and layouts for 10+ campaigns.</li>
+              <li>Managed a small creative team and mentored junior designers.</li>
+            </ul>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <img src="/mnt/data/download.jpg" alt="support1" class="w-full h-32 object-cover rounded-md"/>
+              <img src="/mnt/data/download.jpg" alt="support2" class="w-full h-32 object-cover rounded-md"/>
+            </div>
+          </div>
+        </div>
+        <!-- Job 2 -->
+        <div class="bg-white p-6 rounded-lg grid md:grid-cols-3 gap-4 items-center">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 bg-[color:var(--olive)] rounded-md flex items-center justify-center text-white font-bold">IN</div>
+            <div>
+              <h4 class="font-bold">Art Director — Creative Co.</h4>
+              <p class="text-sm text-gray-600">2020 — 2023</p>
+            </div>
+          </div>
+          <div class="md:col-span-2 text-sm text-gray-700">
+            <ul class="list-disc ml-5 space-y-2">
+              <li>Directed large-scale photo shoots with cross-functional teams.</li>
+              <li>Designed print and digital layouts with an editorial sensibility.</li>
+              <li>Won regional design award for outstanding brand storytelling (2022).</li>
+            </ul>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <img src="/mnt/data/download.jpg" alt="support3" class="w-full h-32 object-cover rounded-md"/>
+              <img src="/mnt/data/download.jpg" alt="support4" class="w-full h-32 object-cover rounded-md"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EDUCATION -->
+    <section id="education" class="mt-10 bg-white p-8 rounded-lg shadow">
+      <h3 class="text-4xl font-extrabold mb-4">EDUCATION</h3>
+      <div class="grid md:grid-cols-3 gap-6 items-center">
+        <div>
+          <h4 class="font-bold">Institute of Design — 2016 — 2020</h4>
+          <p class="text-sm text-gray-600">B.Des — Communication Design</p>
+          <ul class="mt-4 text-sm list-disc ml-5 text-gray-700">
+            <li>GPA: 8.6/10</li>
+            <li>Award: Best Capstone Project (2019)</li>
+            <li>Exchange semester in Mumbai — Editorial Photography</li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <img src="/mnt/data/download.jpg" alt="campus" class="w-full h-48 object-cover rounded-md" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SKILLS -->
+    <section id="skills" class="mt-10 bg-[color:var(--black)] text-white p-8 rounded-lg shadow">
+      <h3 class="text-4xl font-extrabold mb-6">SKILLS</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Technical Skills with circular charts -->
+        <div class="bg-[color:var(--offwhite)] p-6 rounded-lg text-[color:var(--black)]">
+          <h4 class="font-bold mb-4">Technical Skills</h4>
+          <div class="grid grid-cols-2 gap-6">
+            <!-- skill item -->
+            <div class="flex flex-col items-center">
+              <svg viewBox="0 0 36 36" class="w-28 h-28">
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="#e6e6e6" stroke-width="4"></path>
+                <path class="progress-90" d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="var(--olive)" stroke-width="4" stroke-dasharray="90,100" stroke-linecap="round"></path>
+                <text x="18" y="20" font-size="6" text-anchor="middle" fill="var(--black)" class="prog-num">90%</text>
+              </svg>
+              <div class="mt-2 font-semibold">Photography</div>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <svg viewBox="0 0 36 36" class="w-28 h-28">
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="#e6e6e6" stroke-width="4"></path>
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="var(--olive)" stroke-width="4" stroke-dasharray="70,100" stroke-linecap="round"></path>
+                <text x="18" y="20" font-size="6" text-anchor="middle" fill="var(--black)" class="prog-num">70%</text>
+              </svg>
+              <div class="mt-2 font-semibold">Editorial Layout</div>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <svg viewBox="0 0 36 36" class="w-28 h-28">
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="#e6e6e6" stroke-width="4"></path>
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="var(--olive)" stroke-width="4" stroke-dasharray="55,100" stroke-linecap="round"></path>
+                <text x="18" y="20" font-size="6" text-anchor="middle" fill="var(--black)" class="prog-num">55%</text>
+              </svg>
+              <div class="mt-2 font-semibold">Branding</div>
+            </div>
+
+            <div class="flex flex-col items-center">
+              <svg viewBox="0 0 36 36" class="w-28 h-28">
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="#e6e6e6" stroke-width="4"></path>
+                <path d="M18 2a16 16 0 1 1 0 32 16 16 0 1 1 0-32" fill="none" stroke="var(--olive)" stroke-width="4" stroke-dasharray="30,100" stroke-linecap="round"></path>
+                <text x="18" y="20" font-size="6" text-anchor="middle" fill="var(--black)" class="prog-num">30%</text>
+              </svg>
+              <div class="mt-2 font-semibold">UX/UI</div>
+            </div>
+          </div>
         </div>
 
-        <div class="card">
-            <h3>Himalayan Drive</h3>
-            <p>Travel company website for Mukteshwar & Nainital region.</p>
+        <!-- Communication Skills -->
+        <div class="bg-[color:var(--olive)] p-6 rounded-lg">
+          <h4 class="font-bold mb-4">Communication Skills</h4>
+          <div class="text-sm text-white">
+            <p class="font-semibold">Mother Tongue(s):</p>
+            <ul class="mt-2 space-y-1">
+              <li>हिंदी <span class="ml-2">🇮🇳</span></li>
+              <li>English <span class="ml-2">🇬🇧</span></li>
+            </ul>
+            <div class="mt-4">
+              <p class="font-semibold">Other Language(s):</p>
+              <div class="mt-2 space-y-2">
+                <div class="flex justify-between">
+                  <span>हिन्दी (Advanced)</span><span>100%</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>English (Professional)</span><span>90%</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Spanish (Conversational)</span><span>40%</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-            <h3>FDS Logistics</h3>
-            <p>Logistics business website with custom design.</p>
-        </div>
-    </div>
-</section>
+    <!-- 7. VOLUNTEER WORK -->
+    <section id="volunteer" class="mt-10">
+      <h3 class="text-4xl font-extrabold mb-6">VOLUNTEER WORK</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="bg-white p-4 rounded-lg shadow">
+          <img src="/mnt/data/download.jpg" alt="vol1" class="w-full h-36 object-cover rounded-md mb-3" />
+          <h4 class="font-bold">Green Earth</h4>
+          <p class="text-sm text-gray-600">Community Photographer — 2022</p>
+          <p class="mt-2 text-sm text-gray-700">Documented community events and created visuals for fundraising campaigns.</p>
+        </article>
 
-<section>
-    <h2>Contact Me</h2>
-    <p>Email: <b>ritikkumarofficial@gmail.com</b></p>
-    <p>Phone: <b>+91 9536395102</b></p>
-</section>
+        <article class="bg-[color:var(--offwhite)] p-4 rounded-lg shadow">
+          <img src="/mnt/data/download.jpg" alt="vol2" class="w-full h-36 object-cover rounded-md mb-3" />
+          <h4 class="font-bold">City Arts</h4>
+          <p class="text-sm text-gray-600">Workshop Leader — 2021</p>
+          <p class="mt-2 text-sm text-gray-700">Led weekend workshops teaching basic photography and layout to teens.</p>
+        </article>
 
-<footer>
-    <p>© 2025 Ritik | All Rights Reserved</p>
-</footer>
+        <article class="bg-white p-4 rounded-lg shadow">
+          <img src="/mnt/data/download.jpg" alt="vol3" class="w-full h-36 object-cover rounded-md mb-3" />
+          <h4 class="font-bold">Shelter Stories</h4>
+          <p class="text-sm text-gray-600">Visual Storyteller — 2020</p>
+          <p class="mt-2 text-sm text-gray-700">Produced a short photo series highlighting shelter residents' voices.</p>
+        </article>
+      </div>
+    </section>
 
+    <!-- 8. HOBBIES -->
+    <section id="hobbies" class="mt-10 bg-white p-6 rounded-lg shadow">
+      <h3 class="text-4xl font-extrabold mb-6">HOBBIES</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <figure class="text-center">
+          <img src="/mnt/data/download.jpg" alt="hobby1" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Photography</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="/mnt/data/download.jpg" alt="hobby2" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Surfing</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="/mnt/data/download.jpg" alt="hobby3" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Cooking</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="/mnt/data/download.jpg" alt="hobby4" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Travel</figcaption>
+        </figure>
+        <figure class="text-center hidden md:block">
+          <img src="/mnt/data/download.jpg" alt="hobby5" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Reading</figcaption>
+        </figure>
+        <figure class="text-center hidden md:block">
+          <img src="/mnt/data/download.jpg" alt="hobby6" class="w-full h-40 object-cover rounded-md" />
+          <figcaption class="mt-2 text-sm font-semibold">Sketching</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 9. GET IN TOUCH -->
+    <section id="contact" class="mt-10 bg-[color:var(--offwhite)] p-8 rounded-lg shadow grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-4xl font-extrabold">GET IN TOUCH</h3>
+        <p class="mt-3 text-sm text-gray-700">Let's make something beautiful together. मेल/ईमेल और फोन दोनों चलेगा — professional responses within 48 hrs.</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li><strong>Email:</strong> <a href="mailto:you@example.com" class="underline">you@example.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+911234567890" class="underline">+91 12345 67890</a></li>
+          <li><strong>LinkedIn:</strong> <a href="#" class="underline">linkedin.com/in/yourprofile</a></li>
+          <li><strong>Portfolio:</strong> <a href="#" class="underline">yourportfolio.com</a></li>
+        </ul>
+
+        <form class="mt-6 grid gap-3" onsubmit="event.preventDefault(); alert('Message sent — demo only');">
+          <input class="p-3 rounded border" type="text" placeholder="Name" required />
+          <input class="p-3 rounded border" type="email" placeholder="Email" required />
+          <textarea class="p-3 rounded border" rows="4" placeholder="Message" required></textarea>
+          <div class="flex gap-3">
+            <button class="bg-black text-white px-4 py-2 rounded">Send Message</button>
+            <a href="/resume.pdf" class="px-4 py-2 border rounded">Download Résumé</a>
+          </div>
+        </form>
+      </div>
+      <div class="flex justify-end">
+        <img src="/mnt/data/download.jpg" alt="final photo" class="w-80 rounded-md object-cover shadow" />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-center text-sm text-gray-600">
+      © <span id="year"></span> [YOUR NAME] • Designed with a HASU-inspired editorial aesthetic
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').innerText = new Date().getFullYear();
+  // subtle hover effects
+  document.querySelectorAll('a').forEach(a=>{a.addEventListener('mouseover', ()=> a.style.opacity=0.85); a.addEventListener('mouseout', ()=> a.style.opacity=1);});
+</script>
 </body>
 </html>
-
