@@ -1,382 +1,54 @@
-<!doctype html>
-<html lang="hi">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — [Your Name]</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@300;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#f3eadc; /* vintage cream */
-      --ink:#1a1a1a;
-      --muted:#6b6b6b;
-      --accent:#1b6f5b;
-      --card:#fffaf2;
-      --max-width:1000px;
-      --gap:18px;
-    }
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background:linear-gradient(180deg, var(--bg) 0%, #efe6d6 100%);
-      color:var(--ink);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:28px;
-      display:flex;
-      justify-content:center;
-    }
-
-    .container{
-      width:100%;
-      max-width:var(--max-width);
-      background:transparent;
-      box-sizing:border-box;
-    }
-
-    /* Header / Title */
-    .mast{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:var(--gap);
-      margin-bottom:22px;
-    }
-    .title-wrap{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .portfolio-sign{
-      font-family:'Playfair Display',serif;
-      font-weight:900;
-      font-size:64px;
-      letter-spacing:2px;
-      transform:skewX(-6deg);
-      line-height:0.9;
-      color:var(--ink);
-      margin:0;
-    }
-    .meta{
-      text-align:right;
-      font-size:12px;
-      color:var(--muted);
-    }
-
-    /* Nav small categories */
-    .modes{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin:12px 0 26px 0;
-      border-top:1px solid rgba(0,0,0,0.06);
-      border-bottom:1px solid rgba(0,0,0,0.06);
-      padding:10px 6px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .modes span{padding:6px 8px;}
-
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:30px;
-      align-items:start;
-      margin-bottom:28px;
-    }
-    .illustration{
-      background:var(--card);
-      border-radius:10px;
-      padding:8px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 2px 0 rgba(0,0,0,0.03);
-    }
-    .illustration img{
-      display:block;
-      width:100%;
-      height:auto;
-      border-radius:8px;
-    }
-    .hello{
-      padding:6px 4px;
-    }
-    .hello h1{
-      font-family:'Playfair Display',serif;
-      font-size:42px;
-      margin:0 0 8px 0;
-      letter-spacing:2px;
-    }
-    .hello p.lead{
-      color:var(--muted);
-      margin:0 0 14px 0;
-      line-height:1.6;
-    }
-    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
-    .chip{
-      border:1px solid rgba(0,0,0,0.08);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:12px;
-      background:white;
-    }
-
-    /* main columns */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 320px;
-      gap:26px;
-    }
-
-    /* Left column sections */
-    section{
-      background:transparent;
-    }
-    h2.section-title{
-      font-family:'Playfair Display',serif;
-      font-size:20px;
-      margin:8px 0 12px 0;
-      letter-spacing:1px;
-    }
-
-    .timeline{
-      display:grid;
-      gap:10px;
-    }
-    .item{
-      background:var(--card);
-      padding:12px;
-      border-radius:8px;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-      border-left:3px solid rgba(0,0,0,0.06);
-    }
-    .item b{display:block;font-size:13px}
-    .item small{color:var(--muted);font-size:12px}
-
-    /* gallery */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-      margin-top:12px;
-    }
-    .gallery img{width:100%;height:82px;object-fit:cover;border-radius:6px;}
-
-    /* right column cards */
-    .card{
-      background:var(--card);
-      padding:14px;
-      border-radius:10px;
-      box-shadow: 0 2px 0 rgba(0,0,0,0.03);
-      margin-bottom:16px;
-    }
-    .hobbies{
-      display:flex;
-      gap:8px;
-      justify-content:space-between;
-    }
-    .hobby{
-      text-align:center;
-      font-size:12px;
-    }
-    .hobby img{width:48px;height:48px;object-fit:contain}
-
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{padding:8px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);font-size:12px}
-
-    .contact-list{display:flex;flex-direction:column;gap:8px}
-    .contact-row{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
-    .contact-row a{color:var(--ink);text-decoration:none;font-weight:600;font-size:13px}
-
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px;padding:14px 0;}
-
-    /* responsive */
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr;grid-auto-rows:auto}
-      .grid{grid-template-columns:1fr}
-      .portfolio-sign{font-size:48px}
-      .mast{flex-direction:column;align-items:flex-start;gap:8px}
-    }
-    @media (max-width:420px){
-      body{padding:16px}
-      .portfolio-sign{font-size:36px}
-      .illustration{padding:6px}
-      .gallery img{height:64px}
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Angèle Bappel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: '#f9f5eb',
+              ink: '#1a1a1a',
+              'vintage-purple': '#5d57a5',
+              'vintage-green': '#008f66',
+              'vintage-orange': '#e85d04',
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Nunito"', 'sans-serif'],
+            },
+            boxShadow: {
+              'vintage': '4px 4px 0px 0px rgba(0,0,0,1)',
+              'vintage-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f9f5eb;
+        color: #1a1a1a;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
 </head>
-<body>
-  <div class="container" role="main">
-    <!-- header -->
-    <header class="mast" aria-label="Site header">
-      <div class="title-wrap">
-        <h1 class="portfolio-sign" aria-hidden="true">PORTFOLIO</h1>
-        <div style="font-size:12px;color:var(--muted);margin-left:8px;">
-          <div><strong>[Your Name]</strong></div>
-          <div>Art Director / Designer — 2025</div>
-        </div>
-      </div>
-      <div class="meta">
-        <div>Directrice Artistique</div>
-        <div style="margin-top:6px">Based in: [City], [Country]</div>
-      </div>
-    </header>
-
-    <div class="modes" role="navigation" aria-label="Project categories">
-      <span>UI Design</span>
-      <span><strong>Illustration</strong></span>
-      <span>Social Media</span>
-      <span>Motion Design</span>
-      <span>3D</span>
-      <span>Game Design</span>
-      <span>Graphisme</span>
-      <span>Design Interactif</span>
-    </div>
-
-    <!-- hero -->
-    <div class="hero">
-      <figure class="illustration" aria-hidden="false">
-        <!-- replace src with your illustration path -->
-        <img src="assets/hero-illustration.jpg" alt="Illustrated character sitting — portfolio hero" />
-      </figure>
-
-      <aside class="hello" aria-labelledby="hello-title">
-        <h1 id="hello-title">HELLO!</h1>
-        <p class="lead">Main [Your Name] hoon — graphic designer aur junior art director. Main illustrations, motion aur visual stories banata/ti hoon. Yahan kuch selected projects, experience aur contact details diye gaye hain.</p>
-
-        <div class="chips" aria-hidden="false">
-          <div class="chip">Illustration</div>
-          <div class="chip">Motion</div>
-          <div class="chip">UI / UX</div>
-        </div>
-
-        <p style="color:var(--muted);font-size:13px">Domain d'intérêt: <strong style="color:var(--accent)">ILLUSTRATION</strong> &nbsp; <span style="border:1px solid rgba(0,0,0,0.06);padding:4px 8px;border-radius:999px;margin-left:8px;font-size:12px">MOTION</span></p>
-      </aside>
-    </div>
-
-    <!-- main content grid -->
-    <div class="grid" role="region" aria-label="Main portfolio content">
-      <!-- left column -->
-      <div>
-        <section aria-labelledby="exp">
-          <h2 class="section-title" id="exp">Experiences</h2>
-          <div class="timeline">
-            <div class="item">
-              <b>Freelance — Sept 2023 — Now</b>
-              <small>Upian Production, Brave Paris, Lacoste, Shay, etc.</small>
-              <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">Illustration, motion and art direction for campaigns and short films.</p>
-            </div>
-
-            <div class="item">
-              <b>Motion Designer — Jan 2023 to Aug 2023</b>
-              <small>Experience Instore — Lacoste S.A.</small>
-              <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">Animated sequences for retail displays and brand films.</p>
-            </div>
-
-            <div class="item">
-              <b>Designer UI - Illustratrice — Sept 2021 to Dec 2022</b>
-              <small>Spintank</small>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="projects" style="margin-top:20px;">
-          <h2 class="section-title" id="projects">Selected Projects</h2>
-
-          <div class="gallery" role="list">
-            <!-- Replace images with real project thumbnails -->
-            <img src="assets/thumb1.jpg" alt="Project thumbnail 1" />
-            <img src="assets/thumb2.jpg" alt="Project thumbnail 2" />
-            <img src="assets/thumb3.jpg" alt="Project thumbnail 3" />
-            <img src="assets/thumb4.jpg" alt="Project thumbnail 4" />
-            <img src="assets/thumb5.jpg" alt="Project thumbnail 5" />
-            <img src="assets/thumb6.jpg" alt="Project thumbnail 6" />
-            <img src="assets/thumb7.jpg" alt="Project thumbnail 7" />
-            <img src="assets/thumb8.jpg" alt="Project thumbnail 8" />
-            <img src="assets/thumb9.jpg" alt="Project thumbnail 9" />
-          </div>
-        </section>
-
-      </div>
-
-      <!-- right column -->
-      <aside>
-        <div class="card" aria-labelledby="edu">
-          <h3 id="edu" style="font-family:'Playfair Display',serif;margin:0 0 8px 0">Formations</h3>
-          <p style="margin:0;color:var(--muted);font-size:13px">
-            <strong>GOBELINS Paris</strong> — 2021-2023<br/>
-            <small>Expertise en création numérique interactive.</small>
-          </p>
-        </div>
-
-        <div class="card" aria-labelledby="skills">
-          <h3 id="skills" style="font-family:'Playfair Display',serif;margin:0 0 8px 0">Aptitudes</h3>
-          <div class="skills" role="list">
-            <div class="skill">Illustration digitale</div>
-            <div class="skill">Blender</div>
-            <div class="skill">Storyboard</div>
-            <div class="skill">Suite Adobe</div>
-            <div class="skill">Figma</div>
-            <div class="skill">Animation</div>
-          </div>
-        </div>
-
-        <div class="card" aria-labelledby="hobbies">
-          <h3 id="hobbies" style="font-family:'Playfair Display',serif;margin:0 0 12px 0">Hobbies</h3>
-          <div class="hobbies">
-            <div class="hobby">
-              <img src="assets/graff-icon.png" alt="Graff icon" />
-              <div>Graff</div>
-            </div>
-            <div class="hobby">
-              <img src="assets/fantasy-icon.png" alt="Fantasy icon" />
-              <div>Fantasy</div>
-            </div>
-            <div class="hobby">
-              <img src="assets/skate-icon.png" alt="Skate icon" />
-              <div>Skate</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" aria-labelledby="contact">
-          <h3 id="contact" style="font-family:'Playfair Display',serif;margin:0 0 8px 0">Contact</h3>
-          <div class="contact-list">
-            <div class="contact-row">
-              <span aria-hidden="true">✉️</span>
-              <a href="mailto:your.email@example.com">your.email@example.com</a>
-            </div>
-            <div class="contact-row">
-              <span aria-hidden="true">🌐</span>
-              <a href="https://behance.net/" target="_blank" rel="noopener">behance.net/yourprofile</a>
-            </div>
-            <div class="contact-row">
-              <span aria-hidden="true">🔗</span>
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/yourprofile</a>
-            </div>
-            <div class="contact-row" style="margin-top:8px;color:var(--muted);font-size:12px">
-              Phone: <strong style="color:var(--ink);margin-left:6px">+91 9XXXXXXXXX</strong>
-            </div>
-          </div>
-        </div>
-
-      </aside>
-    </div>
-
-    <footer>
-      © <span id="year"></span> [Your Name] — Selected works & contact • Template single-file HTML
-    </footer>
-  </div>
-
-  <script>
-    // small niceties
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
